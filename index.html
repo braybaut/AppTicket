@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Form</title>
-  
-  
-  
+
+
+
       <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
@@ -16,27 +16,29 @@
 	<div class="login">
 		<div class="login-screen">
 			<div class="app-title">
+        <img src="images/ucc.png" alt="Universidad Cooperativa de Colombia" style="width:260px;height:218px;" >
 				<h1>Login</h1>
 			</div>
-
+      <form action="checklogin.php" method="post">
 			<div class="login-form">
 				<div class="control-group">
-				<input type="text" class="login-field" value="" placeholder="username" id="login-name">
+				<input type="text" class="login-field" name=username placeholder="username" id="login-name">
 				<label class="login-field-icon fui-user" for="login-name"></label>
 				</div>
 
 				<div class="control-group">
-				<input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+				<input type="password" class="login-field" name=password placeholder="password" id="login-pass">
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-				<a class="btn btn-primary btn-large btn-block" href="#">login</a>
-				<a class="login-link" href="#">Lost your password?</a>
+				<input type=submit value=login <a class="btn btn-primary btn-large btn-block" </a> </input>
+
 			</div>
 		</div>
 	</div>
+</form>
 </body>
-  
-  
+
+
 </body>
 </html>
