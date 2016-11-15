@@ -1,4 +1,5 @@
 <?php
+include("conect-mysql.php");
 
 $usuario = $_POST['username'];
 $pass = $_POST['password'];
@@ -8,12 +9,12 @@ header("Location: index.html");
 exit();
 }
 
-mysql_connect('localhost','root','Locogreenday666') or die("Error al conectar " . mysql_error());
-mysql_select_db('restaurant') or die ("Error al seleccionar la Base de datos: " . mysql_error());
+#mysql_connect('localhost','root','Locogreenday666') or die("Error al conectar " . mysql_error());
+#mysql_select_db('restaurant') or die ("Error al seleccionar la Base de datos: " . mysql_error());
 
-$result = mysql_query("SELECT * from app_user where user_name='" . $usuario . "'");
+$result = $mysqli ->query("SELECT * from app_user where user_name='" . $usuario . "'");
 
-if($row = mysql_fetch_array($result)){
+if($row = mysqli_fetch_array($result)){
 if($row['password'] == $pass){
 session_start();
 $_SESSION['loggedin'] = true;
