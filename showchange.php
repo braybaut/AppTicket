@@ -48,10 +48,11 @@ exit;
 include ("conect-mysql.php");
 $ticket = $_REQUEST['ticket'];
 $restaurant = $_REQUEST['restaurant'];
-$query = $mysqli -> query ("select distinct waiter.NIF,restaurant.name  from ticket,exchangedticket,restaurant,waiter,person  where denomination = '$ticket' and restaurant='$restaurant' and restaurant.id='$restaurant' and maitre='$restaurant'");
+$query = $mysqli -> query ("select distinct waiter.NIF,restaurant.name from exchangedticket,restaurant,person,waiter  where ticket = '$ticket' and restaurant='$restaurant' and restaurant.id='$restaurant' and maitre='$restaurant'");
 $row = $query->fetch_assoc();
 echo $row[name] ;
 echo "</br>";
+
 $NIF=$row[NIF];
 $query = $mysqli -> query("select name,surname from person where NIF='$NIF'");
 $row = $query->fetch_assoc();
